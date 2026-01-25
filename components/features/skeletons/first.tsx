@@ -3,10 +3,8 @@ import { IconCircleDashedCheck, IconClock, IconExclamationCircle, IconPrison, Ic
 
 export const Skeletonone = ()=>{
     return (
-        <div className="perspective-distant h-full w-full -translate-y-10 mask-radial-from-50% mask-r-from-50%"
-        style={{
-            transform:"rotateZ(8deg) rotateY(-20deg) rotateX(20deg) scale(1.2)"
-        }}>
+        <div className="perspective-distant h-full w-full -translate-y-10 mask-radial-from-50% mask-r-from-50%
+         rotate-z-15 -rotate-y-20 rotate-x-30 scale-[1.2]">
         <SkeletonCard
         className="absolute bottom-0 left-12 z-30 max-w-[90%]"
         icon={<IconCircleDashedCheck className="size-4"/>} title="Campaign Planner" 
@@ -94,7 +92,7 @@ export const SkeletonCard = ({icon, title, description,badge, className}:{
     icon:React.ReactNode,
     title:string,
     description?:string,
-    badge:React.ReactNode
+    badge?:React.ReactNode
     className:React.ReactNode
     })=>{
     return(

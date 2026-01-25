@@ -11,7 +11,7 @@ export const Logo = ({className}: {className?:string})=>{
 
 
 
- const LogoIcon = (props:React.SVGAttributes<SVGSVGElement>)=>{
+ export const LogoIcon = (props:React.SVGAttributes<SVGSVGElement>)=>{
     return <svg 
     width="20"
     height="15" 

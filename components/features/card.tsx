@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 export const Card = ({className,children}: {className?:string, children:React.ReactNode})=>{
     return (
-        <div className={cn("bg-neutral-50 dark:bg-neutral-800 rounded-lg", className)}>
+        <div className={cn("max-w-l mx-auto bg-neutral-50 dark:bg-neutral-800 rounded-lg", className)}>
 
             {children}
         </div>
@@ -11,7 +11,7 @@ export const Card = ({className,children}: {className?:string, children:React.Re
 
 export const CardContent = ({className,children }: {className?:string, children:React.ReactNode})=>{
     return (
-        <div className={cn("px-4 md:px-8 pb-6 md:pb-12 flex item-center justify-between",className)}>
+        <div className={cn("px-4 md:px-8 pb-6 md:pb-12 flex items-center justify-between",className)}>
             {children}
 
         </div>
@@ -39,7 +39,7 @@ export const CardCTA =  ({className,children, ...rest}:React.ComponentProps<"but
 
 export const CardSkeleton = ({className,children}:{className?:string, children?: React.ReactNode})=>{
     return( 
-        <div className={cn("relative h-40 md:min-h-80 overflow-hidden perspective-distant", className)}>
+        <div className={cn("relative h-80 sm:h-60 md:min-h-80 overflow-hidden perspective-distant", className)}>
             {children}
         </div>
     )

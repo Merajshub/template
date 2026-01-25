@@ -3,10 +3,16 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import {easeOut, motion} from 'motion/react'
 
-export const Landingimage = ()=>{
+export const Landingimage = ({
+    firstImageSrc = "https://assets.aceternity.com/screenshots/4.jpg",
+    secondImageSrc = "https://assets.aceternity.com/screenshots/4.jpg",
+    showGradient = true
+})=>{
     return (
         <div className="relative">
-        <div className="absolute inset-x-0 h-full w-full bg-white dark:bg-background dark:mask-r-from-30% mask-t-from-10% z-50"></div>
+            {showGradient && (
+            <div className="absolute inset-x-0 h-full w-full bg-white dark:bg-background dark:mask-r-from-30% mask-t-from-10% z-50"></div>
+            )}
         <div className="relative pt-20 min-h-72 sm:min-h-80 md:min-h-100 lg:min-h-200 w-full perspective-distant translate-x-28">
             <motion.div
             initial={{
@@ -24,10 +30,11 @@ export const Landingimage = ()=>{
             }}
         
              className="perspective-[4000px]">
-             <Image src="https://assets.aceternity.com/screenshots/4.jpg"
+             <Image src={firstImageSrc}
                     alt="Demo 1"
                     height={1080}
                     width={1920}
+                    draggable={false}
                     className={cn("absolute inset-0 rounded-lg mask-r-from-20% mask-b-from-20% shadow-xl")}
                     style={{transform: "rotateY(20deg) rotateX(40deg) rotateZ(-20deg)"}}></Image>
             </motion.div>
@@ -48,10 +55,11 @@ export const Landingimage = ()=>{
 
             }}
             className="perspective-[4000px] translate-x-20 -translate-y-10 md:-translate-y-40 lg:-translate-y-40">
-             <Image src="https://assets.aceternity.com/screenshots/3.jpg"
+             <Image src={secondImageSrc}
                     alt="Demo 1"
                     height={1080}
                     width={1920}
+                    draggable={false}
                     className={cn("absolute inset-0 -translate-x-10 rounded-lg mask-r-from-50% mask-b-from-50% shadow-xl")}
                     style={{transform:"rotateY(20deg) rotateX(40deg) rotateZ(-20deg)"}}></Image>
             </motion.div>
